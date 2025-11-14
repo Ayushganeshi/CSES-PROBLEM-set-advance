@@ -6,7 +6,7 @@ int main() {
 	
 	while(t--)
 	{
-	    int ans=1;
+	    int an1s=1;
 	    int count=1;
 	    int n;
 	    cin>>n;
@@ -28,3 +28,4 @@ int main() {
 	}
 
 }
+
