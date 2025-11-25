@@ -27,7 +27,7 @@ typedef pair<int, int> pii;
 
 const ll mod = 998244353;
 const ll inf = 1e18;
-const int MAX = 2e5 + 42;
+const int MAX = 2e5 +42;
 
 random_device rd;
 mt19937 gen(rd());
