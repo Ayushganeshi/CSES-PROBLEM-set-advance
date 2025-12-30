@@ -6,7 +6,7 @@
     #include <ext/pb_ds/tree_policy.hpp>
 #endif
 
-#pragma GCC target ("avx2")
+
 #pragma GCC optimize ("Ofast")
 #pragma GCC optimize ("unroll-loops")
 
