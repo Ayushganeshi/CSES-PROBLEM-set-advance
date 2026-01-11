@@ -39,7 +39,7 @@ void solve() {
     vector<vector<int>> a(2, vector<int>(n));
     for(auto &i : a) {
         for(auto &j : i) {
-            cin >> j;
+            cin>>j;
         }
     }
 
