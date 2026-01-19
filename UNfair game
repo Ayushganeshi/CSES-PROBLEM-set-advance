@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
  
 using namespace std;
+// Ayush ganeshi
  
 int c_n_k[31][31];
 
