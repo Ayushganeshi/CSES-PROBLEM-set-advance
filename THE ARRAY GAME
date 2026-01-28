@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define int long long
+using namespace std;
+using ld = long double;
+using ll = long long;
+const int maxN = 2e5+5;
+const int INF = 1e18;
+const int MOD = 1e9+7;
+#define F first
+#define S second
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+ 
+int rnd(int b){
+	return (unsigned long long)rng()%b;
+}
+int power(int a, int b){
+	if(b==0)return 1;
+	if(b%2)return a*power(a,b-1)%MOD;
+	return power(a*a%MOD,b/2);
+}
+int inv(int a){
+	return power(a,MOD-2);
+}
+vector<int>fact(maxN);
+vector<int>invfact(maxN);
+ 
+ 
+signed main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+ 
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+ 
+		map<int,int>freq;
+		int s= 0;
+		int sum = 0;
+		for(int i = 0;i<n;i++){
+			int x;
+			cin>>x;
+			if(x%2)freq[x]++, s+=x-1;
+			else s+=x;
+			sum +=x;
+		}
+		int A = s/2;;
+		vector<int>b;
+		for(auto [u,v] : freq)b.push_back(v);
+		sort(b.rbegin(),b.rend());
+		for(int i = 0;i<b.size();i+=2)A+=b[i];
+		cout<<A<<" "<<sum-A<<endl;
+ 
+	}
+	
+}
