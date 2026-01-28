@@ -5,6 +5,8 @@ using namespace std;
 vector <int> parent;
 vector <int> rnk;
 vector <int> sz;
+// CHESS ANS CODE//
+AUTHIR
 
 void make_set(int v) {
     parent[v] = v;
