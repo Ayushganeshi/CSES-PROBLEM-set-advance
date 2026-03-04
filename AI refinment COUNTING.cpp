@@ -2,7 +2,7 @@
 using i64 = long long;
 
 // CHESS &&&&CODE??
-//AUTHOR;ayush kr gupta
+//AUTHOR:::_>>>ayush kr gupta
 
 void solve() {
     int n;
