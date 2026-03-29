@@ -18,7 +18,8 @@ public:
             auto it=mp.find(k-ans[i]);
             if(it!=mp.end())
             {
-                return true;
+                return true;/////////////////////////////////////sSPACE COMPLEXITY((((O(N)))
+                //////////////////////// TIME COMPLXITY (((0(N))
             }
             mp[ans[i]]++;
         }
