@@ -1,5 +1,10 @@
 class Solution {
-public:
+
+
+
+////////////////////////////////////////  time complexity n.logk
+//////////////////////////////////////   space complexity 0(n)
+)public:
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
         priority_queue<pair<int,int>>pq;
         for(auto ele: arr)
