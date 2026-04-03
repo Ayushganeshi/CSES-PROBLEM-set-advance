@@ -4,8 +4,9 @@ public:
         unordered_map<int,int>mp;
         vector<int>ans;
         if(nums.size()==k)
-        return nums;
-
+        return nums;                  ////////////////space complexity(0(n))
+            /////////////////////////////////in heap push and top takes logk time where k is the number of elemnt in the heap
+))
         for(int  i=0;i<nums.size();i++)
         {
             mp[nums[i]]++;
