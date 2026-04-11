@@ -2,7 +2,8 @@
 using namespace std;
 
 // Helper function to convert integer to binary string
-string toBinary(long long x) {
+string toBinary(long long x) {/////////////////////////////tc 0(n);
+    ////////////////////////////////////////////////////// sc  (0(n);
     string s;
     while (x > 0) {
         s += (x % 2) + '0';
