@@ -3,8 +3,9 @@ public:
     int closestTarget(vector<string>& words, string target, int startIndex) {
         int ans=INT_MAX;
         int n=words.size();
-        for(int i=0;i<n;i++)
-        {
+        for(int i=0;i<n;i++)/////////////////////////////////////////  space complexity 0(1);
+                          ////////////////////////////////////////    time complexity   0(n);
+;        {
             if(words[i]==target)
             {
                 int dist=abs(startIndex-i);
