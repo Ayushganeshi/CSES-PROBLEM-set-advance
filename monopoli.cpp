@@ -1,37 +1,7 @@
-#ifdef LOCAL
-    #include <bits/include_all.h>
-#else
 
-    #include <ext/pb_ds/tree_policy.hpp>
-#endif
+///////////time coplexity 0(n)
 
-
-#pragma GCC optimize ("Ofast")
-#pragma GCC optimize ("unroll-loops")
-
-#define all(x) (x).begin(), (x).end()
-#define rall(x) (x).rbegin(), (x).rend()
-#define int long long
-
-
-using namespace __gnu_pbds;
-
-template <typename T> using oset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-template <typename T> inline bool umax(T &a, const T &b) { if(a < b) { a = b; return 1; } return 0; }
-
-typedef long long ll;
-typedef long double ld;
-typedef pair<int, int> pii;
-
-const ll mod = 998244353;
-const ll inf = 1e18;
-const int MAX = 2e5 +42;
-
-random_device rd;
-mt19937 gen(rd());
-uniform_int_distribution<ll> dis(1, inf);
-
+////////////// space complexity 0(n)
 void solve() {
     int n;
     cin >> n;
