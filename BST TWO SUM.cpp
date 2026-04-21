@@ -5,7 +5,7 @@ public:
     {
         if(root==NULL)return;
         traverse(root->left,ans);
-        ans.push_back(root->val);////////////////////////// log(n
+        ans.push_back(root->val);////////////////////////// log(n)
         traverse(root->right,ans);
     }
     bool findTarget(TreeNode* root, int k) {
