@@ -11,7 +11,8 @@ int main(){
         int n;
         cin >> n;
  
-        vector<int> a(n);
+        vector<int> a(n);//////////////////////////////////////////   time complexity 0(n);
+     //////////////////////////////////////////////////////////////   space complexity 0(n);
         for(int i = 0; i < n; i++) cin >> a[i];
  
         int ans = 0;
