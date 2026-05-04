@@ -4,7 +4,8 @@ using namespace std;
 // Ayush ganeshi
  
 int c_n_k[31][31];
-
+                             //////////    time colmplxity 0(n)
+                                //////       space complexITY 0(N)
 int main() {
     for (int i = 0; i < 30; ++i) {
         for (int j = 0; j < 30; ++j) {
