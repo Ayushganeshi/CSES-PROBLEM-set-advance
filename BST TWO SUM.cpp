@@ -13,7 +13,7 @@ public:
         traverse(root,ans);
         map<int,int>mp;
         
-        for(int i=0;i<ans.size();i++)
+        for(int i=0;i<ans.size();i++)//////
         {
             auto it=mp.find(k-ans[i]);
             if(it!=mp.end())
