@@ -1,0 +1,128 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int INF = 1e9 + 7;
+const int A = 1e6 + 3;
+
+int I(int val, int l, int r) {
+    if (val < l) {
+        return 0;
+    }
+    return min(val, r);
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+
+    vector<vector<int>> a(2, vector<int>(n));
+
+    for (int k = 0; k < 2; k++) {
+        for (int i = 0; i < n; i++) {
+            cin >> a[k][i];
+        }
+    }
+
+    vector<vector<int>> minVal(2, vector<int>(A, INF));
+    vector<vector<int>> pMin(2, vector<int>(A, INF));
+    vector<vector<int>> sMin(2, vector<int>(A, INF));
+
+    for (int k = 0; k < 2; k++) {
+
+        for (int i = 0; i < n; i++) {
+            minVal[k][a[k][i]] =
+                min(minVal[k][a[k][i]], a[k ^ 1][i]);
+        }
+
+        for (int v = 0; v < A - 1; v++) {
+            pMin[k][v + 1] =
+                min(pMin[k][v], minVal[k][v]);
+        }
+
+        for (int v = A - 2; v >= 0; v--) {
+            sMin[k][v] =
+                min(sMin[k][v + 1], minVal[k][v]);
+        }
+    }
+
+    int mid = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (a[0][mid] + a[1][mid] >
+            a[0][i] + a[1][i]) {
+            mid = i;
+        }
+    }
+
+    int m;
+    cin >> m;
+
+    vector<vector<int>> t(3, vector<int>(m));
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> t[i][j];
+        }
+    }
+
+    vector<int> ans;
+
+    for (int id = 0; id < m; id++) {
+
+        int cur =
+            I(a[0][mid],
+              t[0][id],
+              t[0][id] + t[2][id])
+
+            +
+
+            I(a[1][mid],
+              t[1][id],
+              t[1][id] + t[2][id]);
+
+        for (int k = 0; k < 2; k++) {
+
+            int pos_l = t[k][id];
+
+            int pos_r =
+                min(A - 1,
+                    t[k][id] + t[2][id]);
+
+            if (pMin[k][pos_l] < INF) {
+
+                cur = min(
+                    cur,
+                    I(
+                        pMin[k][pos_l],
+                        t[k ^ 1][id],
+                        t[k ^ 1][id] + t[2][id]
+                    )
+                );
+            }
+
+            if (sMin[k][pos_r] < INF) {
+
+                cur = min(
+                    cur,
+                    pos_r +
+                    I(
+                        sMin[k][pos_r],
+                        t[k ^ 1][id],
+                        t[k ^ 1][id] + t[2][id]
+                    )
+                );
+            }
+        }
+
+        ans.push_back(cur);
+    }
+
+    for (int x : ans) {
+        cout << x << '\n';
+    }
+
+    return 0;
+}
