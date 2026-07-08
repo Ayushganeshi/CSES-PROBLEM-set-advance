@@ -7,7 +7,7 @@ public:
         {
             int h=queries[i][0];
             int k=queries[i][1];
-            int r=queries[i][2];
+            int r=queries[i][2];  ///////////////////o(n*n)
             int count=0;
             for(int j=0;j<points.size();j++)
             {
